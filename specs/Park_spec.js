@@ -19,7 +19,14 @@ describe("Park", function() {
     assert.strictEqual(park.enclosure.length, 1);
   });
 
-  it("should be able to remove all dinosaurs of a particular type");
+  it("should be able to remove all dinosaurs of a particular type", function() {
+    park.add(new Dinosaur("Pterodactyl", 2));
+    park.add(new Dinosaur("Pterodactyl", 2));
+    park.add(new Dinosaur("Tyrannosaurus Rex", 1));
+    park.add(new Dinosaur("Tyrannosaurus Rex", 1));
+    park.removeByType("Pterodactyl");
+    assert.strictEqual(park.enclosure.length, 2);
+  });
 
   it("should get all the dinosaurs with an offspring count of more than 2");
 });
