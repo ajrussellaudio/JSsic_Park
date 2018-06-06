@@ -1,5 +1,6 @@
 const assert = require("assert");
 const Park = require("../Park");
+const Dinosaur = require("../Dinosaur");
 
 describe("Park", function() {
   let park;
@@ -12,7 +13,13 @@ describe("Park", function() {
     assert.strictEqual(park.enclosure.length, 0);
   });
 
-  it("should be able to add dinosaur");
+  it("should be able to add dinosaur", function() {
+    const dinosaur = new Dinosaur("Pterodactyl", 2);
+    park.add(dinosaur);
+    assert.strictEqual(park.enclosure.length, 1);
+  });
+
   it("should be able to remove all dinosaurs of a particular type");
+
   it("should get all the dinosaurs with an offspring count of more than 2");
 });
