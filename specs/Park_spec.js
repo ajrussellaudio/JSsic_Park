@@ -35,4 +35,21 @@ describe("Park", function() {
     const breeders = park.getDinosWithOffspringCountGreaterThan(9);
     assert.strictEqual(breeders.length, 1);
   });
+
+  it("should be able to calculate number of dinosaurs after year one, starting with 1 dinosaur", function() {
+    park.add(new Dinosaur("Velociraptor", 3));
+    assert.strictEqual(park.projectedDinoCount(1), 4);
+  });
+
+  it("should be able to calculate number of dinosaurs after year two, starting with 1 dinosaur", function() {
+    park.add(new Dinosaur("Velociraptor", 3));
+    assert.strictEqual(park.projectedDinoCount(2), 16);
+  });
+
+  it("should be able to calculate number of dinosaurs after year two, starting with 2 dinosaur", function() {
+    park.add(new Dinosaur("Velociraptor", 3));
+    park.add(new Dinosaur("Velociraptor", 1));
+    assert.strictEqual(park.projectedDinoCount(2), 20);
+  });
+
 });

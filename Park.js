@@ -48,4 +48,12 @@ Park.prototype.getDinosWithOffspringCountGreaterThan = function (count) {
   return lotsOfBabies;
 };
 
+Park.prototype.projectedDinoCount = function (years) {
+  let total = 0;
+  for (let dinosaur of this.enclosure) {
+    total += (1 + dinosaur.offspringPerYear) ** years;
+  }
+  return total;
+};
+
 module.exports = Park;
