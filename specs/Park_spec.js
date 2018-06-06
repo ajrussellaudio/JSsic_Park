@@ -28,5 +28,11 @@ describe("Park", function() {
     assert.strictEqual(park.enclosure.length, 2);
   });
 
-  it("should get all the dinosaurs with an offspring count of more than 2");
+  it("should get all the dinosaurs with an offspring count of more than 2", function() {
+    park.add(new Dinosaur("Velociraptor", 12));
+    park.add(new Dinosaur("Triceratops", 1));
+    park.add(new Dinosaur("Diplodocus", 3));
+    const breeders = park.getDinosWithOffspringCountGreaterThan(9);
+    assert.strictEqual(breeders.length, 1);
+  });
 });

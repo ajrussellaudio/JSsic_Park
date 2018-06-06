@@ -33,4 +33,19 @@ Park.prototype.removeByType = function (type) {
   }
 };
 
+Park.prototype.getDinosWithOffspringCountGreaterThan = function (count) {
+  // make new array
+  const lotsOfBabies = [];
+  // loop thru dinos
+  for (let dinosaur of this.enclosure) {
+    // if offspring more than two
+    if (dinosaur.offspringPerYear > count) {
+      // add to new array
+      lotsOfBabies.push(dinosaur)
+    }
+  }
+  // return array
+  return lotsOfBabies;
+};
+
 module.exports = Park;
